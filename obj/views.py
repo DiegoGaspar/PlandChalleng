@@ -15,9 +15,7 @@ class ViagemViewSet(viewsets.ModelViewSet):
 
     @api_view(['GET', 'POST'])
     def car_list(request):
-        """
-        List all persons, or create a new person.
-        """
+
         if request.method == 'GET':
             persons = Car.objects.all()
             serializer = CarSerializer(persons, many=True)
